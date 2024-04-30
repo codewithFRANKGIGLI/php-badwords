@@ -1,6 +1,6 @@
 <?php
-    $word = $_GET['word'];
-    $text = $_GET['text'];
+    $word = $_GET[strtolower('word')];
+    $text = $_GET[strtolower('text')];
 ?>
 
 <!DOCTYPE html>
@@ -16,10 +16,10 @@
         <h2>Without Bad-Words</h2>
         <div>
             <h3>
-                Hai inserito un paragrafo di <?php echo strlen($text) ?> caratteri.
+                Hai inserito un paragrafo di <strong><?php echo strlen($text) ?></strong> caratteri.
             </h3>
             <h3>
-                Questo è lo stesso paragrafo senza la parola <?php echo $word ?> e che misura <?php echo strlen(str_replace($word, '***', $text)) ?> caratteri.
+                Questo è lo stesso paragrafo senza la parola <?php echo $word ?> e che misura <strong><?php echo strlen(str_replace($word, '***', $text)) ?></strong> caratteri.
             </h3>
             <p>
                 <?php echo str_replace($word, '***', $text) ?>
