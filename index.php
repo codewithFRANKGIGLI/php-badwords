@@ -13,12 +13,12 @@
         <div class="container">
             <h3>Censura:</h3>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="parola da censurare">
+                <input name="word" type="text" class="form-control" id="floatingInput" placeholder="parola da censurare">
                 <label for="floatingInput">Scrivi la parola che vuoi censurare</label>
             </div>
             <h3>Testo da censurare:</h3>
             <div class="form-floating">
-                <textarea class="form-control" placeholder="Scrivi qua il testo da censurare" id="floatingTextarea2" style="height: 100px"></textarea>
+                <textarea name="text" type="text" class="form-control" placeholder="Scrivi qua il testo da censurare" id="floatingTextarea2" style="height: 100px"></textarea>
                 <label for="floatingTextarea2">Scrivi qua il testo da censurare</label>
             </div>
             <hr>
