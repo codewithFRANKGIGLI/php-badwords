@@ -3,6 +3,9 @@
     $text = $_GET['text'];
     $wordLower = strtolower($word);
     $textLower = strtolower($text);
+    $censuredText = str_replace($wordLower, '***', $textLower);
+    $textLen = strlen($text) - substr_count($text, ' ');
+    $censuredTextLen = strlen($censuredText) - (substr_count($censuredText, '***') + substr_count($censuredText, ' '));
 ?>
 
 <!DOCTYPE html>
@@ -18,13 +21,13 @@
         <h2>Without Bad-Words</h2>
         <div>
             <h3 class="border-bottom border-secondary-subtle">
-                Hai inserito un paragrafo di <strong><?php echo strlen($text) ?></strong> caratteri.
+                Hai inserito un paragrafo di <strong><?php echo $textLen ?></strong> caratteri.
             </h3>
             <h3 class="border-bottom border-secondary-subtle">
-                Questo è lo stesso paragrafo senza la parola <?php echo $word ?> e che misura <strong><?php echo strlen(str_replace($wordLower, '***', $textLower)) ?></strong> caratteri.
+                Questo è lo stesso paragrafo senza la parola <?php echo $word ?> e che misura <strong><?php echo $censuredTextLen ?></strong> caratteri.
             </h3>
             <p class="border border-secondary p-2 rounded">
-                <?php echo str_replace($wordLower, '***', $textLower) ?>
+                <?php echo $censuredText ?>
             </p>
         </div>
     </div>
