@@ -5,7 +5,7 @@
     $textLower = strtolower($text);
     $censuredText = str_replace($wordLower, '***', $textLower);
     $textLen = strlen($text) - substr_count($text, ' ');
-    $censuredTextLen = strlen($censuredText) - (substr_count($censuredText, '***') + substr_count($censuredText, ' '));
+    $censuredTextLen = strlen($censuredText);
 ?>
 
 <!DOCTYPE html>
